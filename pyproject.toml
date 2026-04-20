@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "profitspot-mcp"
-version = "1.1.0"
+version = "1.1.1"
 description = "Cross-chain DeFi intelligence for AI agents. Risk-scored yields, profit simulation, whale tracking across 86 chains and 6,500+ pools. By profitspot.live"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -19,7 +19,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
-    "fastmcp>=2.0",
+    "fastmcp>=3.0",
     "httpx>=0.27",
     "numpy>=1.26",
     "pydantic>=2.0",

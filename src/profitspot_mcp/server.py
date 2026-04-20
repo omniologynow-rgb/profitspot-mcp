@@ -16,6 +16,8 @@ Environment:
   PROFITSPOT_API_KEY  — Set for Pro tier (all 7 tools, full params)
                         Leave unset for Free tier (3 tools, limited)
 """
+import sys
+
 from fastmcp import FastMCP
 
 from .auth import get_tier, Tier, pro_gate, rate_gate, get_discover_limit, can_filter_risk
@@ -311,13 +313,18 @@ def main():
 
     Transport is controlled by MCP_TRANSPORT env var:
       - "streamable-http" → hosted deployment (MCPize, etc.)
+      - "sse" → legacy SSE deployment
       - "stdio" → local usage (Claude Desktop, Cursor, VS Code)
     """
     import os
+
     transport = os.environ.get("MCP_TRANSPORT", "stdio")
+    port = int(os.environ.get("PORT", "8080"))
+    host = os.environ.get("MCP_HOST", "0.0.0.0")
+
+    print(f"[profitspot-mcp] Starting with transport={transport}, host={host}, port={port}", flush=True)
+
     if transport in ("streamable-http", "sse"):
-        host = os.environ.get("MCP_HOST", "0.0.0.0")
-        port = int(os.environ.get("PORT", "8080"))
         mcp.run(transport=transport, host=host, port=port)
     else:
         mcp.run()
