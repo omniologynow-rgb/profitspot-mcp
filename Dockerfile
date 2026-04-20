@@ -7,6 +7,7 @@ COPY src/ src/
 
 RUN pip install --no-cache-dir .
 
+ENV MCP_TRANSPORT=streamable-http
 EXPOSE 8080
 
 CMD ["profitspot-mcp"]
