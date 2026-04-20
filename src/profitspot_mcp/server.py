@@ -307,8 +307,20 @@ async def defi_overview(chain: str | None = None) -> dict:
 # ── Entry Point ───────────────────────────────────────────────────
 
 def main():
-    """Run the MCP server (HTTP transport for production)."""
-    mcp.run(transport="sse", host="0.0.0.0", port=8080)
+    """Run the MCP server.
+
+    Transport is controlled by MCP_TRANSPORT env var:
+      - "streamable-http" → hosted deployment (MCPize, etc.)
+      - "stdio" → local usage (Claude Desktop, Cursor, VS Code)
+    """
+    import os
+    transport = os.environ.get("MCP_TRANSPORT", "stdio")
+    if transport in ("streamable-http", "sse"):
+        host = os.environ.get("MCP_HOST", "0.0.0.0")
+        port = int(os.environ.get("PORT", "8080"))
+        mcp.run(transport=transport, host=host, port=port)
+    else:
+        mcp.run()
 
 
 if __name__ == "__main__":

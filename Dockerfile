@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY pyproject.toml README.md ./
 COPY src/ src/
+RUN pip install --no-cache-dir .
 
-RUN pip install --no-cache-dir -e "."
-
-# Default: stdio transport for MCP protocol
-CMD ["python", "-m", "profitspot_mcp.server"]
-
+ENV MCP_TRANSPORT=streamable-http
+ENV PORT=8080
 EXPOSE 8080
+
+CMD ["profitspot-mcp"]
