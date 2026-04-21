@@ -1,0 +1,13 @@
+version: 1
+runtime: python
+entry: src/profitspot_mcp/server.py
+
+build:
+  install: pip install --no-cache-dir .
+
+startCommand:
+  type: stdio
+  command: profitspot-mcp
+
+configSchema:
+  source: code
