@@ -7,7 +7,7 @@ build:
 
 startCommand:
   type: stdio
-  command: profitspot-mcp
+  command: python -m profitspot_mcp.server
 
 configSchema:
   source: code
