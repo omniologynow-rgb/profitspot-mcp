@@ -1,3 +1,4 @@
+<!-- mcp-name: io.github.omniologynow-rgb/profitspot-mcp -->
 <p align="center">
   <h1 align="center">ProfitSpot MCP</h1>
   <p align="center">

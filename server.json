@@ -1,5 +1,5 @@
 {
-  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.omniologynow-rgb/profitspot-mcp",
   "title": "ProfitSpot MCP",
   "description": "Cross-chain DeFi intelligence MCP server \u2014 86 chains, 6,500+ pools, 7 tools for AI agents",
