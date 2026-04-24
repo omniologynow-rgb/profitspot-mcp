@@ -14,6 +14,7 @@
   <a href="https://modelcontextprotocol.io"><img src="https://img.shields.io/badge/MCP-compatible-8A2BE2" alt="MCP Compatible"></a>
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.11+-3776AB.svg" alt="Python 3.11+"></a>
   <a href="https://profitspot.live"><img src="https://img.shields.io/badge/built%20by-ProfitSpot-ff6b35" alt="Built by ProfitSpot"></a>
+  <a href="https://pepy.tech/project/profitspot-mcp"><img src="https://static.pepy.tech/badge/profitspot-mcp/month" alt="PyPI Downloads/month"></a>
 </p>
 
 <p align="center">
@@ -592,4 +593,10 @@ Returns real dollar amounts across bearish/base/optimistic scenarios.
 <p align="center">
   <strong>Built by <a href="https://profitspot.live">ProfitSpot</a></strong><br/>
   <sub>The Bloomberg Terminal for DeFi — now available to every AI agent.</sub>
+</p>
+
+---
+
+<p align="center">
+  🔎 Also check out <strong><a href="https://github.com/omniologynow-rgb/scout-intel-mcp">Scout Intel MCP</a></strong> — business &amp; market intelligence for AI agents. Research any company, market, or competitor in seconds.
 </p>
