@@ -5,12 +5,20 @@ build-backend = "hatchling.build"
 [project]
 name = "profitspot-mcp"
 version = "1.1.1"
-description = "Cross-chain DeFi intelligence for AI agents. Risk-scored yields, profit simulation, whale tracking across 86 chains and 6,500+ pools. By profitspot.live"
+description = "The DeFi Brain for AI agents — ask Claude to find safe yields, grade liquidity pool risk, simulate profits, calculate impermanent loss, and track whale movements across 86 blockchains and 6,500+ liquidity pools. Risk-scored A-F, Monte Carlo simulations, real-time DeFiLlama data. pip install profitspot-mcp"
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "AGPL-3.0-or-later"}
 authors = [{name = "ProfitSpot", email = "hello@profitspot.live"}]
-keywords = ["mcp", "defi", "yield", "blockchain", "ai", "agents", "risk-scoring"]
+keywords = [
+    "mcp", "mcp-server", "model-context-protocol",
+    "defi", "decentralized-finance", "yield-farming", "yield-optimizer",
+    "liquidity-pool", "impermanent-loss", "impermanent-loss-calculator",
+    "risk-scoring", "risk-assessment", "monte-carlo-simulation",
+    "whale-tracking", "blockchain", "ethereum", "cross-chain",
+    "defi-analytics", "defi-intelligence", "ai-agent", "claude",
+    "cursor", "llm-tools", "tvl", "apy", "defillama"
+]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
