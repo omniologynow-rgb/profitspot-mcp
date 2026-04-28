@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.omniologynow-rgb/profitspot-mcp",
   "title": "ProfitSpot MCP \u2014 The DeFi Brain for AI Agents",
-  "description": "The DeFi Brain for AI agents \u2014 risk-scored yields, Monte Carlo profit simulation, impermanent loss calculator, and whale tracking across 86 chains and 6,500+ liquidity pools. Give Claude or any LLM the power to analyze DeFi like a quant. Free tier available, no API key needed. Install: pip install profitspot-mcp",
+  "description": "Claude-ready DeFi MCP \u2014 risk-scored yields, profit sims & whale tracking across 86 blockchains",
   "version": "1.1.2",
   "packages": [
     {
