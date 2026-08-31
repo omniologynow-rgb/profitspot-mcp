@@ -73,8 +73,21 @@ class _RateLimiter:
 _limiter = _RateLimiter()
 
 
+def is_local_full() -> bool:
+    """Owner's/self-hoster's local unlock (opt-in): PROFITSPOT_LOCAL_FULL=true.
+
+    Grants all tools with no daily cap, entirely offline — no key, no billing
+    backend, nothing phones home (tool data is all DeFiLlama-direct anyway).
+    Intended for self-hosted deployments where the operator IS the owner;
+    hosted/managed deploys simply don't set the flag.
+    """
+    return os.environ.get("PROFITSPOT_LOCAL_FULL", "").strip().lower() in ("1", "true", "yes")
+
+
 def get_tier() -> Tier:
     """Determine current tier based on PROFITSPOT_API_KEY env var."""
+    if is_local_full():
+        return Tier.PRO
     key = os.environ.get("PROFITSPOT_API_KEY", "").strip()
     if key and len(key) >= 8:
         return Tier.PRO
@@ -105,6 +118,9 @@ def check_rate_limit() -> tuple[bool, dict]:
     Call this at the start of every tool invocation.
     """
     tier = get_tier()
+    if is_local_full():
+        return True, {"tier": "pro", "mode": "local_full", "daily_limit": None,
+                      "remaining": None, "usage_today": _limiter.usage_today}
     limit = RATE_LIMITS[tier]
     allowed, remaining = _limiter.check(limit)
     info = {
